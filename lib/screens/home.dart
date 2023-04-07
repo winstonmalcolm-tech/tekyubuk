@@ -32,13 +32,17 @@ class _MyHomePageState extends State<MyHomePage> {
           child: _widgetOptions.elementAt(_selectedIndex),
         ),
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: const Color(0xFF333A47),
+          iconSize: 30,
+          unselectedItemColor: Colors.white70,
+          elevation: 0,
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.music_note_outlined), label: "Tones"),
             BottomNavigationBarItem(icon: Icon(Icons.schedule), label: "Schedule"),
-            BottomNavigationBarItem(icon: Icon(Icons.school), label: "School")
+            BottomNavigationBarItem(icon: Icon(Icons.task), label: "Tasks")
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.purple,
+          selectedItemColor: Colors.redAccent[100],
           onTap: _onItemTapped,
         ),
     );
