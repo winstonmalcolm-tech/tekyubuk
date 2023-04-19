@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
             BottomNavigationBarItem(icon: Icon(Icons.task), label: "Tasks")
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.redAccent[100],
+          selectedItemColor: Colors.teal[200],
           onTap: _onItemTapped,
         ),
     );

@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tekyuhbook/model/eventhandler.dart';
 import './screens/home.dart';
+import 'model/Event.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => Event()),
+        ],
+        child: const MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -23,22 +30,17 @@ class MyApp extends StatelessWidget {
     900: Color(0xFF333A47),
   });
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
-
-    return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => DateHandler())
-        ],
-      child: MaterialApp(
+    return MaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: mycolor,
           ),
           home: const MyHomePage()
-      ),
-    );
+      );
   }
 }
 

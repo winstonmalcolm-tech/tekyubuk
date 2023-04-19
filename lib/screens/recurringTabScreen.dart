@@ -176,8 +176,6 @@ class _RecurringScreenState extends State<RecurringScreen> {
                   backgroundColor: MaterialStatePropertyAll(Colors.teal)
               ),
               onPressed: () {
-                var rand = Random();
-                int id = rand.nextInt(1000);
                 int day = 1;
 
                 if (_formKey.currentState!.validate() == false) {
@@ -201,15 +199,8 @@ class _RecurringScreenState extends State<RecurringScreen> {
                   break;
                 }
 
-                Map studyDetails = {
-                  "planned": title.text,
-                  "day": day,
-                  "startTime": startTime.text,
-                  "endTime": endTime.text,
-                };
+                Provider.of<Event>(context, listen: false).addTime(day, null, Activity(planned: title.text, day: day, startTime: startTime.text, endTime: endTime.text, date: null));
 
-                Provider.of<Event>(context, listen: false).addTime(day,studyDetails);
-                _formKey.currentState!.reset();
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Session added")));
               },
               child: const Text("Add", style: TextStyle(fontSize: 18),)
