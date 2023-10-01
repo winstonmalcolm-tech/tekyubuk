@@ -1,6 +1,6 @@
 # tekyuhbook
 
-A new Flutter project.
+A mobile app to help students management their time effectively on social media, by notifying of their study or break times when they are on the platform for too long
 
 ## Screenshots
 
